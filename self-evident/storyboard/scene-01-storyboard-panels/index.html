@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Self Evident - Scene 01 Storyboard Panels</title>
+  <style>
+    :root {
+      --ink: #1c1a17;
+      --muted: #6a6259;
+      --line: #d7d0c7;
+      --paper: #fbfaf7;
+      --panel: #ffffff;
+      --accent: #6f4d2d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.35;
+    }
+
+    main {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 28px;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 24px;
+      align-items: end;
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 14px;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      margin: 0 0 4px;
+      font-size: 26px;
+      letter-spacing: 0;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 12px;
+      text-align: right;
+    }
+
+    .workflow {
+      margin: 0 0 18px;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      background: #fffdf9;
+      font-size: 13px;
+    }
+
+    .storyboard-pages {
+      display: grid;
+      gap: 28px;
+    }
+
+    .storyboard-page {
+      background: #fff;
+      border: 1px solid var(--line);
+      padding: 14px;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      box-shadow: 0 1px 4px rgba(28, 26, 23, .08);
+    }
+
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .04em;
+    }
+
+    .page-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .panel-title {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 10px;
+      align-items: center;
+      padding: 7px 9px;
+      border-bottom: 1px solid var(--line);
+      background: #f4efe8;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .shot-id {
+      color: #fff;
+      background: var(--accent);
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 10px;
+      white-space: nowrap;
+    }
+
+    .duration {
+      color: var(--muted);
+      font-weight: 600;
+      font-size: 11px;
+      white-space: nowrap;
+    }
+
+    figure {
+      margin: 0;
+      background: #15120f;
+      border-bottom: 1px solid var(--line);
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .notes {
+      display: grid;
+      gap: 4px;
+      padding: 8px;
+      font-size: 11px;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 72px 1fr;
+      gap: 7px;
+    }
+
+    .label {
+      color: var(--muted);
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 9px;
+      letter-spacing: .04em;
+    }
+
+    .priority {
+      border-top: 1px solid var(--line);
+      margin-top: 2px;
+      padding-top: 6px;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    @media print {
+      body {
+        background: #fff;
+      }
+
+      main {
+        max-width: none;
+        padding: 8mm;
+      }
+
+      .storyboard-pages {
+        gap: 0;
+      }
+
+      .storyboard-page {
+        min-height: 260mm;
+        box-shadow: none;
+        border: 0;
+        padding: 0;
+        page-break-after: always;
+      }
+
+      .panel {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+
+      .workflow {
+        break-after: avoid;
+      }
+    }
+
+    @media (max-width: 860px) {
+      main {
+        padding: 16px;
+      }
+
+      header,
+      .page-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .storyboard-page {
+        padding: 10px;
+      }
+
+      .meta {
+        text-align: left;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>Self Evident - Scene 01 Storyboard Panels</h1>
+        <div class="subtitle">The Committee - approved keyframes with render notes</div>
+      </div>
+      <div class="meta">
+        Updated 2026-07-10 14:41<br>
+        Flow/Omni production path
+      </div>
+    </header>
+
+    <section class="workflow">
+      <strong>Next workflow:</strong> use these panels as the director-facing map for video generation. Render one shot at a time from the approved keyframe plus panel notes. Start with SH03, SH06, and SH08 as pilot tests before rendering the full scene.
+    </section>
+
+    <section class="storyboard-pages">
+      <section class="storyboard-page">
+        <div class="page-header"><span>Storyboard Page 1</span><span>SH01-SH04</span></div>
+        <div class="page-grid">
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH01</span><span>Opening Reading</span><span class="duration">8-10 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH01_KF_v01.png" alt="SH01 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Establish committee room; Franklin reads the draft phrase.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Franklin: "We hold these truths to be sacred and undeniable?"</div></div>
+          <div class="row"><div class="label">Motion</div><div>Franklin reads; Adams watches or works quietly. Static house master with slight settle.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Both seated, two candles burning, draft and papers centered.</div></div>
+          <div class="priority">Render priority: establish visual grammar and Franklin voice.</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH02</span><span>Franklin Objects</span><span class="duration">5-7 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH02_KF_v01.png" alt="SH02 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Franklin objects to the wording.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Franklin: "I don't care for this phrase. It's clumsy."</div></div>
+          <div class="row"><div class="label">Motion</div><div>Franklin lowers or studies the draft; Adams becomes attentive. Gentle push toward Franklin.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Franklin remains screen-left/window side; Adams remains screen-right/door side.</div></div>
+          <div class="priority">Render priority: Franklin lip sync and older, deliberate voice.</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH03</span><span>Adams Attacks "Sacred"</span><span class="duration">12-16 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH03_KF_v01.png" alt="SH03 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Adams argues that "sacred" is Jefferson's word.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Adams: "Sacred is Jefferson's word... We will spend three months on sacred." Franklin: "I know."</div></div>
+          <div class="row"><div class="label">Motion</div><div>Adams presses the point; Franklin concedes quietly. Restrained push toward Adams.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Adams active with draft or papers; Franklin listening.</div></div>
+          <div class="priority">Render priority: first Adams voice test - quick, precise, lawyerly, impatient.</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH04</span><span>Adams Attacks "Undeniable"</span><span class="duration">10-13 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH04_KF_v01.png" alt="SH04 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Adams argues that "undeniable" invites denial.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Adams: "And undeniable is worse..." Franklin: "I know that too."</div></div>
+          <div class="row"><div class="label">Motion</div><div>Adams sharpens argument; Franklin accepts the criticism but remains unsatisfied.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Preserve Franklin screen-left/dark-window side and Adams screen-right/garden-door side.</div></div>
+          <div class="priority">Render priority: prevent accidental character side swap.</div>
+        </div>
+      </article>
+
+        </div>
+      </section>
+
+      <section class="storyboard-page">
+        <div class="page-header"><span>Storyboard Page 2</span><span>SH05-SH08</span></div>
+        <div class="page-grid">
+
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH05</span><span>Adams Asks The Question</span><span class="duration">7-9 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH05_KF_v01.png" alt="SH05 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Adams handles the quill and asks what word Franklin wants.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Adams: "Then what word do you want?"</div></div>
+          <div class="row"><div class="label">Motion</div><div>Adams returns to practical work, then forces the central question.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Inkwell, quill, papers, and two candles visible.</div></div>
+          <div class="priority">Render priority: hand/quill prop continuity.</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH06</span><span>Franklin Defines The Missing Word</span><span class="duration">18-22 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH06_KF_v01.png" alt="SH06 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Franklin tries to name the idea behind the word.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Franklin: "I want the word that means... I want the word for that."</div></div>
+          <div class="row"><div class="label">Motion</div><div>Franklin studies the draft, thinks, and speaks carefully. Slow push toward Franklin.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Franklin active with draft; Adams listening.</div></div>
+          <div class="priority">Render priority: central conceptual performance; older, lower, gravelly Franklin voice.</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH07</span><span>Feeling Versus Word</span><span class="duration">9-12 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH07_KF_v01.png" alt="SH07 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Adams calls it a feeling; Franklin insists on a word for the feeling.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Adams: "That is not a word. That is a feeling." Franklin: "Then I want a word for the feeling."</div></div>
+          <div class="row"><div class="label">Motion</div><div>Intellectual stalemate; no major physical action. Subtle live reframing only.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Both seated; table/draft central; restrained emotional temperature.</div></div>
+          <div class="priority">Render priority: bridge before Franklin's movement begins.</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH08</span><span>Franklin Takes The Candle</span><span class="duration">10-14 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH08_KF_v01.png" alt="SH08 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Franklin rises and takes the portable candle.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Franklin: "I am going to get some air."</div></div>
+          <div class="row"><div class="label">Motion</div><div>Franklin stands, takes one candleholder, and prepares to leave; Adams keeps writing.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Two candles before action; Franklin takes one; one remains beside Adams.</div></div>
+          <div class="priority">Render priority: candle transfer clarity over elegance.</div>
+        </div>
+      </article>
+
+        </div>
+      </section>
+
+      <section class="storyboard-page">
+        <div class="page-header"><span>Storyboard Page 3</span><span>SH09-SH10</span></div>
+        <div class="page-grid">
+
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH09</span><span>Franklin Exits</span><span class="duration">8-11 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH09_KF_v01.png" alt="SH09 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Adams tells Franklin not to be long; Franklin exits through the garden door.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Adams: "Don't be long."</div></div>
+          <div class="row"><div class="label">Motion</div><div>Franklin crosses to or passes through the open garden door with candle; Adams remains writing.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Garden door is screen-right; one candle remains on table; Franklin carries the other out.</div></div>
+          <div class="priority">Render priority: preserve final frame if it helps Scene 02 garden entry.</div>
+        </div>
+      </article>
+
+      <article class="panel">
+        <div class="panel-title"><span class="shot-id">SH10</span><span>Adams Alone</span><span class="duration">8-12 sec</span></div>
+        <figure><img src="../../keyframes/SE_S01_SH10_KF_v01.png" alt="SH10 keyframe"></figure>
+        <div class="notes">
+          <div class="row"><div class="label">Beat</div><div>Franklin is gone; Adams writes alone.</div></div>
+          <div class="row"><div class="label">Dialogue</div><div>Silent or diegetic quill scratch only.</div></div>
+          <div class="row"><div class="label">Motion</div><div>Adams continues writing, absorbed; room feels quieter and emptier.</div></div>
+          <div class="row"><div class="label">Continuity</div><div>Franklin absent; empty chair visible; open garden door; one candle in Adams's writing area.</div></div>
+          <div class="priority">Render priority: final Scene 01 mood anchor.</div>
+        </div>
+      </article>
+
+        </div>
+      </section>
+    </section>
+  </main>
+</body>
+</html>
